@@ -1,0 +1,41 @@
+git config --global user.name "YourName"
+git config --global user.email "YourEmail@example.com"
+
+//CREATING A LOCAL REPOSITORY:
+mkdir MyProject
+cd MyProject
+
+git init
+echo "print('Hello, Git!')" > hello.py
+
+ls
+git status
+
+git add hello.py   # For Python file
+
+ //OR
+git add .
+git commit -m "Initial commit: Added hello.py"
+
+
+//CREATE A REMOTE REPOSITORY:
+git remote add origin https://github.com/username/MyProject.git
+git push -u origin main
+git log
+
+//CLONE THE REPOSITORY:
+cd ..
+git clone https://github.com/username/MyProject.git
+
+//MODIFY THE CLONED REPOSITORY AND PUSH CHANGES:
+cd MyProject
+echo "print('Goodbye, Git!')" >> hello.py
+git status
+git add hello.py
+git commit -m "Updated hello.py to print Goodbye"
+git push origin main
+
+//RESET CHANGES IN LOCAL REPOSITORY:
+echo "print('Resetting...')" >> hello.py
+git reset HEAD hello.py
+git reset --hard
