@@ -2,5 +2,9 @@
 2. push that to github
 3.  github -> settings -> developers code -> create public acess token -> copy it
 4.In jenkins 
-  new item -> create job -> freestyle project
-
+  dashboard -> manage jenkins -> credential -> click on global -> add creditial 
+  username -> github username  , password -> public access tokens , id -> any name , -> create/save
+  new item -> name  -> freestyle project -> create a job
+  configure -> SCM -> git -> add github repo URL -> add credential (which is created ) -> branches to build ( */main)
+  trigger -> Poll SCM -> Schedule (* * * * * ) -> add build step -> executable windows bash command -> add python <file.py> 
+build run.
