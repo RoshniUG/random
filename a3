@@ -1,3 +1,6 @@
 1.Create a file eg., first.py
 2. push that to github
 3.  github -> settings -> developers code -> create public acess token -> copy it
+4.In jenkins 
+  new item -> create job -> freestyle project
+
