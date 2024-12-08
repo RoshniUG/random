@@ -1,0 +1,79 @@
+1.DOCKER INSTALL
+JENKINS INSTALL
+DOCKER HUB ACCOUNT CREATED.
+
+2.Create a repository in docker hub:
+   username as namespace 
+   my-node-app as repo name 
+   samll description about the repo 
+   creating as public
+
+
+3.Application Source Code:
+
+// Example Node.js app (app.js)
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hello from Dockerized App!');
+});
+
+app.listen(3000, () => {
+  console.log('App running on port 3000');
+});
+
+4.Create a Dockerfile:
+# Use official Node.js image from Docker Hub
+FROM node:16
+
+# Set the working directory inside the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of your application code
+COPY . .
+
+# Expose the port your app runs on
+EXPOSE 3000
+
+# Start the app
+CMD ["node", "app.js"]
+
+5.//after this to create the package.json and packagelock.json (in command prompt)
+npm init -y
+npm install express
+
+6. Jenkins pipeline:
+    new item -> pipeline [give name > OK]
+    pipeline section ->pipeline script from SCM -> Select Git -> git repository URL 
+    Branch specifier 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
